@@ -92,11 +92,6 @@ export const Carousel = ({
 
     return (
         <Contaier ref={containerRef}>
-            {childrens.map((child, i) => (
-                <Slider onDragEnd={handleEndDrag} x={x} i={i} key={i}>
-                    {child}
-                </Slider>
-            ))}
             {/* left arrow */}
             {renderArrowLeft ? (
                 renderArrowLeft({ handlePrev, activeIndex: index })
@@ -112,6 +107,12 @@ export const Carousel = ({
             ) : (
                 <Arrow onClick={handleNext}>&rarr;</Arrow>
             )}
+            
+            {childrens.map((child, i) => (
+                <Slider onDragEnd={handleEndDrag} x={x} i={i} key={i}>
+                    {child}
+                </Slider>
+            ))}
 
             {/* dots */}
             {renderDots ? (
