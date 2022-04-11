@@ -32,7 +32,8 @@
     "build:esm": "cross-env BABEL_ENV=esm babel src --extensions .ts,.tsx -d dist/esm",
     "build:cjs": "cross-env BABEL_ENV=cjs babel src --root-mode upward --extensions .ts,.tsx -d dist/cjs",
     "build:types": "tsc --emitDeclarationOnly --declaration --declarationDir dist/types",
-    "pub": "yarn build && npm publish"
+    "pub": "yarn build && npm publish",
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "framer-motion": "^4.1.17"
